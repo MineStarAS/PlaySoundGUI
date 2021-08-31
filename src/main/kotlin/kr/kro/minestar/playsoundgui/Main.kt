@@ -1,21 +1,20 @@
-package kr.kro.minestar
+package kr.kro.minestar.playsoundgui
 
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin() {
     companion object {
-        const val prefix = "§f§7[§9MineStar's Plugin§7]§f"
+        var pl: Main? = null
+        const val prefix = "§f§7[§9PlaySoundGUI§7]§f"
     }
 
     override fun onEnable() {
+        pl = this
         logger.info("$prefix §aEnable")
-
-        getCommand("MCDP")?.setExecutor(CMD())
+        getCommand("sound")?.setExecutor(CMD())
     }
 
     override fun onDisable() {
 
     }
-
-
 }

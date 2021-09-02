@@ -4,7 +4,9 @@ import org.bukkit.Material
 
 enum class Category(override var material: Material): SoundMaterial{
     AMBIENT(Material.DEAD_BUSH),
-    BLOCK(Material.GRASS_BLOCK),
+    BLOCK1(Material.STONE),
+    BLOCK2(Material.GRASS_BLOCK),
+    BLOCK3(Material.DIRT),
     ENCHANT(Material.ENCHANTING_TABLE),
     HOSTILE_ENTITY(Material.CREEPER_HEAD),
     NON_HOSTILE_ENTITY(Material.PLAYER_HEAD),

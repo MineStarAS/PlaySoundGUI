@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "kr.kro.minestar.playsoundgui"
-version = "1.0.0"
+version = "17.0"
 
 repositories {
     mavenCentral()

@@ -313,13 +313,13 @@ class GUI : Listener {
     private fun editVolume(e: InventoryClickEvent) {
         var int: Int = volume[player!!.uniqueId]!!
         if (e.isLeftClick) {
-            int -= if (e.isShiftClick) 10
-            else 1
+            int -= if (e.isShiftClick) 1
+            else 10
             if (int <= 0) int = 0
             volume[player!!.uniqueId] = int
         } else if (e.isRightClick) {
-            int += if (e.isShiftClick) 10
-            else 1
+            int += if (e.isShiftClick) 1
+            else 10
             if (int > 100) int = 100
             volume[player!!.uniqueId] = int
         }
@@ -329,13 +329,13 @@ class GUI : Listener {
     private fun editPitch(e: InventoryClickEvent) {
         var int: Int = pitch[player!!.uniqueId]!!
         if (e.isLeftClick) {
-            int -= if (e.isShiftClick) 10
-            else 1
+            int -= if (e.isShiftClick) 1
+            else 10
             if (int <= 50) int = 50
             pitch[player!!.uniqueId] = int
         } else if (e.isRightClick) {
-            int += if (e.isShiftClick) 10
-            else 1
+            int += if (e.isShiftClick) 1
+            else 10
             if (int > 200) int = 200
             pitch[player!!.uniqueId] = int
         }

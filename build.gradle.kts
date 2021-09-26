@@ -1,11 +1,11 @@
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.5.30"
     id("com.github.johnrengelman.shadow") version "7.0.0"
     `maven-publish`
 }
 
 group = "kr.kro.minestar.playsoundgui"
-version = "17.0"
+version = "17.1"
 
 repositories {
     mavenCentral()
@@ -22,7 +22,6 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
 
     //project_TL
-    implementation("net.projecttl:InventoryGUI-api:4.1.1")
 
     //MineStar
 }
@@ -45,7 +44,7 @@ tasks{
             // jar file copy
             copy {
                 from(archiveFile)
-                val plugins = File("C:\\Users\\MineStar\\Desktop\\MC Server folder\\MCserver 1.17.1 - Murder\\plugins")
+                val plugins = File("C:\\Users\\MineStar\\Desktop\\MC Server folder\\MCserver 1.17.1 - vanilla\\plugins")
                 into(if (File(plugins, archiveFileName.get()).exists()) plugins else plugins)
             }
         }

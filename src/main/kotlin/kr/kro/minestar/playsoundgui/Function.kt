@@ -112,10 +112,10 @@ class Function {
     fun volumeItem(volume: Float): ItemStack {
         var display = "§fVOLUME : §9$volume"
         var description = mutableListOf(
-            "+0.01 : LEFT CLICK",
-            "+0.1 : SHIFT LEFT CLICK",
-            "-0.1 : SHIFT RIGHT CLICK",
-            "-0.01 : RIGHT CLICK",
+            "+0.01 : SHIFT LEFT CLICK",
+            "+0.1 : LEFT CLICK",
+            "-0.1 : RIGHT CLICK",
+            "-0.01 : SHIFT RIGHT CLICK",
         )
         val item = ItemStack(Material.JUKEBOX)
         val itemMeta = item.itemMeta
@@ -130,10 +130,10 @@ class Function {
     fun pitchItem(pitch: Float): ItemStack {
         var display = "§fPITCH : §9$pitch"
         var description = mutableListOf(
-            "+0.01 : LEFT CLICK",
-            "+0.1 : SHIFT LEFT CLICK",
-            "-0.1 : SHIFT RIGHT CLICK",
-            "-0.01 : RIGHT CLICK",
+            "+0.01 : SHIFT LEFT CLICK",
+            "+0.1 : LEFT CLICK",
+            "-0.1 : RIGHT CLICK",
+            "-0.01 : SHIFT RIGHT CLICK",
         )
         val item = ItemStack(Material.JUKEBOX)
         val itemMeta = item.itemMeta

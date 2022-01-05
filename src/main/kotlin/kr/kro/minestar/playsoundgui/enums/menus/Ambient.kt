@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class Ambient(override var material: Material): SoundMaterial{
+enum class Ambient(override var material: Material): SoundMaterial {
     BASALT_DELTAS(Material.BASALT),
     CAVE(Material.STONE),
     CRIMSON_FOREST(Material.CRIMSON_NYLIUM),

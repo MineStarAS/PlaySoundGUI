@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class Item(override var material: Material): SoundMaterial{
+enum class Item(override var material: Material): SoundMaterial {
 
     ARMOR(Material.IRON_CHESTPLATE),
     AXE(Material.IRON_AXE),

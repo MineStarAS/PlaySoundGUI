@@ -1,5 +1,6 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
 enum class ObjectEntity(override var material: Material) : SoundMaterial {

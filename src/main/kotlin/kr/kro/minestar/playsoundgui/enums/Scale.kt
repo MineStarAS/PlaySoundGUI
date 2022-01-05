@@ -2,7 +2,7 @@ package kr.kro.minestar.playsoundgui.enums
 
 import org.bukkit.Material
 
-enum class Scale(float: Float, material: Material) {
+enum class Scale(val float: Float, val material: Material) {
     L_FA_SHARP(0.5F, Material.PINK_TERRACOTTA),
     L_SOL(0.53F, Material.PINK_CONCRETE_POWDER),
     L_SOL_SHARP(0.56F, Material.MAGENTA_TERRACOTTA),
@@ -15,7 +15,6 @@ enum class Scale(float: Float, material: Material) {
     RE_SHARP(0.85F, Material.ORANGE_CONCRETE),
     MI(0.9F, Material.YELLOW_WOOL),
     FA(0.95F, Material.LIME_WOOL),
-    NULL(1.0F, Material.STRUCTURE_VOID),
     FA_SHARP(1.0F, Material.LIME_CONCRETE),
     SOL(1.05F, Material.GREEN_WOOL),
     SOL_SHARP(1.1F, Material.GREEN_CONCRETE),
@@ -30,7 +29,4 @@ enum class Scale(float: Float, material: Material) {
     H_FA(1.9F, Material.PURPLE_WOOL),
     H_FA_SHARP(2.0F, Material.PURPLE_CONCRETE),
     ;
-
-    val float = float
-    val material = material
 }

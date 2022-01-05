@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class Music(override var material: Material): SoundMaterial{
+enum class Music(override var material: Material): SoundMaterial {
     CREATIVE(Material.CRAFTING_TABLE),
     CREDITS(Material.CRAFTING_TABLE),
     DISC_11(Material.MUSIC_DISC_11),

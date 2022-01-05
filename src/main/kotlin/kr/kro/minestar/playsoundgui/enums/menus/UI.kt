@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class UI(override var material: Material): SoundMaterial{
+enum class UI(override var material: Material): SoundMaterial {
     BUTTON_CLICK(Material.OAK_BUTTON),
     CARTOGRAPHY_TABLE_TAKE_RESULT(Material.SPRUCE_BUTTON),
     LOOM_SELECT_PATTERN(Material.BIRCH_BUTTON),

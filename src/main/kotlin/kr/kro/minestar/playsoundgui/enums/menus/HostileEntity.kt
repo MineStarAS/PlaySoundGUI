@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class HostileEntity(override var material: Material): SoundMaterial{
+enum class HostileEntity(override var material: Material): SoundMaterial {
     BLAZE(Material.BLAZE_ROD),
     CREEPER(Material.CREEPER_HEAD),
     DROWNED(Material.TRIDENT),

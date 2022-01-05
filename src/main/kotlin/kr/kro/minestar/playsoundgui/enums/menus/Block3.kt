@@ -1,8 +1,9 @@
-package kr.kro.minestar.playsoundgui.enums
+package kr.kro.minestar.playsoundgui.enums.menus
 
+import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import org.bukkit.Material
 
-enum class Block3(override var material: Material): SoundMaterial{
+enum class Block3(override var material: Material): SoundMaterial {
     POINTED_DRIPSTONE(Material.POINTED_DRIPSTONE),
     POLISHED_DEEPSLATE(Material.POLISHED_DEEPSLATE),
     PORTAL(Material.OBSIDIAN),

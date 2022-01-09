@@ -35,6 +35,8 @@ enum class Block3(override var material: Material): SoundMaterial {
     WATER(Material.WATER_BUCKET),
     WEEPING_VINES(Material.WEEPING_VINES),
     WET_GRASS(Material.GRASS_BLOCK),
+    WOODEN_BUTTON(Material.OAK_BUTTON),
+    WOODEN_DOOR(Material.OAK_DOOR),
     WOODEN_TRAPDOOR(Material.OAK_TRAPDOOR),
     WOOL(Material.WHITE_WOOL),
     ;

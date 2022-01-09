@@ -66,7 +66,10 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
         val display = clickItem.display().unColor()
         val option = Main.soundOptionMap[player]!!
         if (e.slot in gui.size - 9 until gui.size) {
-            if (display.contains("MOVE TO BACK")) return backGUI.openGUI()
+            if (display.contains("MOVE TO BACK")) {
+                backGUI.openGUI()
+                return player.playSound(player.location, Sound.BLOCK_WOODEN_DOOR_CLOSE, SoundCategory.MASTER, 1.0F, 1.5F)
+            }
             if (display.contains("SOUND STOP")) return player.stopSound(SoundStop.all())
             if (display.contains("SOUND CATEGORY")) {
                 when (e.click) {

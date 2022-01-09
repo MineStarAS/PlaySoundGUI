@@ -8,6 +8,8 @@ import kr.kro.minestar.utility.gui.GUI
 import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.string.unColor
 import org.bukkit.Bukkit
+import org.bukkit.Sound
+import org.bukkit.SoundCategory
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.HandlerList
@@ -46,6 +48,7 @@ class Category(override val player: Player) : GUI {
         val display = clickItem.display().unColor()
         val categoryEnum = CategoryEnum.valueOf(display)
         CategoryClass.openGUI(this, categoryEnum, clickItem.type)
+        player.playSound(player.location, Sound.BLOCK_WOODEN_DOOR_OPEN, SoundCategory.MASTER, 1.0F, 1.5F)
     }
 
     @EventHandler
@@ -53,5 +56,6 @@ class Category(override val player: Player) : GUI {
         if (e.player != player) return
         if (e.inventory != gui) return
         HandlerList.unregisterAll(this)
+        player.playSound(player.location, Sound.BLOCK_WOODEN_DOOR_CLOSE, SoundCategory.MASTER, 1.0F, 1.5F)
     }
 }

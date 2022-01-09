@@ -9,6 +9,7 @@ import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.string.unColor
 import net.kyori.adventure.sound.SoundStop
 import org.bukkit.Bukkit
+import org.bukkit.Sound
 import org.bukkit.SoundCategory
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -50,7 +51,10 @@ class Menu(override val player: Player, val categoryEnum: CategoryEnum, val back
         val display = clickItem.display().unColor()
         val option = Main.soundOptionMap[player]!!
         if (e.slot in gui.size - 9 until gui.size) {
-            if (display.contains("MOVE TO BACK")) return backGUI.openGUI()
+            if (display.contains("MOVE TO BACK")) {
+                backGUI.openGUI()
+                return player.playSound(player.location, Sound.BLOCK_WOODEN_DOOR_CLOSE, SoundCategory.MASTER, 1.0F, 1.5F)
+            }
             if (display.contains("SOUND STOP")) return player.stopSound(SoundStop.all())
             if (display.contains("SOUND CATEGORY")) {
                 when (e.click) {
@@ -150,6 +154,7 @@ class Menu(override val player: Player, val categoryEnum: CategoryEnum, val back
         }
         if (e.click != ClickType.LEFT) return
         PlaySound(player, display, clickItem.type, this)
+        player.playSound(player.location, Sound.BLOCK_WOODEN_DOOR_OPEN, SoundCategory.MASTER, 1.0F, 1.5F)
     }
 
     @EventHandler

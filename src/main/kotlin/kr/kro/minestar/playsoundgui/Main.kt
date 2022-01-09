@@ -15,7 +15,7 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         pl = this
         logger.info("$prefix §aEnable")
-        getCommand("soundgui")?.setExecutor(CMD())
+        getCommand("soundgui")?.setExecutor(CMD)
     }
 
     override fun onDisable() {

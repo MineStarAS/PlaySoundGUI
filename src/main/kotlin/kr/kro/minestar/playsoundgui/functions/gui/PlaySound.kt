@@ -26,6 +26,7 @@ import org.bukkit.event.inventory.ClickType
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.inventory.InventoryCloseEvent
 import org.bukkit.inventory.ItemFlag
+import kotlin.math.round
 
 class PlaySound(override val player: Player, val sound: String, val material: Material, val backGUI: GUI) : GUI {
     override val pl = Main.pl
@@ -181,11 +182,11 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
         var soundCategoryText = soundCategory.name.lowercase()
         if (soundCategoryText.toCharArray()[soundCategoryText.toCharArray().size - 1] == 's') soundCategoryText = soundCategoryText.replace("s", "")
         tcCMD.hoverEvent = HoverEvent(HoverEvent.Action.SHOW_TEXT, Text("Click to copy"))
-        tcCMD.clickEvent = ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/playsound ${sound.key} $soundCategoryText @s ~ ~ ~ ${volume / 100F} ${pitch / 100F}")
+        tcCMD.clickEvent = ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/playsound ${sound.key} $soundCategoryText @s ~ ~ ~ ${round(volume * 100) / 100} ${round(pitch * 100) / 100}")
 
         val tcCode = TextComponent("§e[Copy to code]")
         tcCode.hoverEvent = HoverEvent(HoverEvent.Action.SHOW_TEXT, Text("Click to copy"))
-        tcCode.clickEvent = ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "playSound(Location, Sound.$sound, SoundCategory.$soundCategory, ${volume / 100F}F, ${pitch / 100F}F)")
+        tcCode.clickEvent = ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "playSound(Location, Sound.$sound, SoundCategory.$soundCategory, ${round(volume * 100) / 100}F, ${round(pitch * 100) / 100}F)")
 
         val split = TextComponent("§f / ")
 

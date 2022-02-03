@@ -6,7 +6,7 @@ import kr.kro.minestar.playsoundgui.enums.menus.Music
 import kr.kro.minestar.playsoundgui.functions.ItemClass
 import kr.kro.minestar.utility.gui.GUI
 import kr.kro.minestar.utility.item.display
-import kr.kro.minestar.utility.item.setDisplay
+import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.material.item
 import kr.kro.minestar.utility.string.toServer
 import kr.kro.minestar.utility.string.unColor
@@ -46,11 +46,11 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
     override fun displaying() {
         gui.clear()
         if (sound == "MUSIC") for ((slot, s) in Music.values().withIndex()) {
-            val item = s.material.item().setDisplay("${sound}_$s")
+            val item = s.material.item().display("${sound}_$s")
             for (flag in ItemFlag.values()) item.addItemFlags(flag)
             gui.setItem(slot, item)
         }
-        else for ((slot, s) in sounds.withIndex()) gui.setItem(slot, material.item().setDisplay(s.name))
+        else for ((slot, s) in sounds.withIndex()) gui.setItem(slot, material.item().display(s.name))
         val option = Main.soundOptionMap[player]!!
         val slots = ItemClass.buttonSlots(gui.size, option.soundCategory, option.volume, option.pitch, option.scale)
         for (slot in slots) gui.setItem(slot.get, slot.item)

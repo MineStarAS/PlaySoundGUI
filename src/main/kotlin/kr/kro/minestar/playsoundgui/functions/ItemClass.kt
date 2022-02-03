@@ -3,7 +3,7 @@ package kr.kro.minestar.playsoundgui.functions
 import kr.kro.minestar.playsoundgui.enums.Scale
 import kr.kro.minestar.playsoundgui.enums.SoundMaterial
 import kr.kro.minestar.utility.item.Slot
-import kr.kro.minestar.utility.item.setDisplay
+import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.material.item
 import org.bukkit.Material
 import org.bukkit.SoundCategory
@@ -14,7 +14,7 @@ import kotlin.math.round
 object ItemClass {
 
     fun convertItem(soundMaterial: SoundMaterial): ItemStack {
-        val item = soundMaterial.material.item().setDisplay("§f$soundMaterial")
+        val item = soundMaterial.material.item().display("§f$soundMaterial")
         for (flag in ItemFlag.values()) item.addItemFlags(flag)
         return item
     }
@@ -35,12 +35,12 @@ object ItemClass {
     }
 
     fun backItem(): ItemStack {
-        val item = Material.MOJANG_BANNER_PATTERN.item().setDisplay("§f§9MOVE TO BACK")
+        val item = Material.MOJANG_BANNER_PATTERN.item().display("§f§9MOVE TO BACK")
         for (flag in ItemFlag.values()) item.addItemFlags(flag)
         return item
     }
 
-    fun stopItem() = Material.BARRIER.item().setDisplay("§f§cSOUND STOP")
+    fun stopItem() = Material.BARRIER.item().display("§f§cSOUND STOP")
 
     fun outPortItem(soundCategory: SoundCategory): ItemStack {
         val material = when (soundCategory) {
@@ -55,7 +55,7 @@ object ItemClass {
             SoundCategory.AMBIENT -> Material.DEAD_BUSH
             SoundCategory.VOICE -> Material.PARROT_SPAWN_EGG
         }
-        val item = material.item().setDisplay("§fSOUND CATEGORY : §9$soundCategory")
+        val item = material.item().display("§fSOUND CATEGORY : §9$soundCategory")
         item.lore = mutableListOf(
             " ",
             "§f§8PREV : LEFT CLICK",
@@ -66,7 +66,7 @@ object ItemClass {
     }
 
     fun volumeItem(volume: Float): ItemStack {
-        val item = Material.JUKEBOX.item().setDisplay("§fVOLUME : §9${round(volume * 100) / 100}")
+        val item = Material.JUKEBOX.item().display("§fVOLUME : §9${round(volume * 100) / 100}")
         item.lore = mutableListOf(
             " ",
             "§f§8+0.01 : SHIFT LEFT CLICK",
@@ -78,7 +78,7 @@ object ItemClass {
     }
 
     fun pitchItem(pitch: Float): ItemStack {
-        val item = Material.JUKEBOX.item().setDisplay("§fPITCH : §9${round(pitch * 100) / 100}")
+        val item = Material.JUKEBOX.item().display("§fPITCH : §9${round(pitch * 100) / 100}")
         item.lore = mutableListOf(
             " ",
             "§f§8+0.01 : SHIFT LEFT CLICK",
@@ -90,7 +90,7 @@ object ItemClass {
     }
 
     fun scaleItem(scale: Scale?): ItemStack {
-        val item = scale?.material?.item()?.setDisplay("§fSCALE : §9$scale") ?: Material.STRUCTURE_VOID.item().setDisplay("§fSCALE : §9NULL")
+        val item = scale?.material?.item()?.display("§fSCALE : §9$scale") ?: Material.STRUCTURE_VOID.item().display("§fSCALE : §9NULL")
         item.lore = mutableListOf(
             " ",
             "§f§8PREV : LEFT CLICK",

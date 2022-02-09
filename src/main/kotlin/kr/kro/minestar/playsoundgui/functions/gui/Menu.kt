@@ -107,7 +107,7 @@ class Menu(override val player: Player, val categoryEnum: CategoryEnum, val back
                     }
                     ClickType.SHIFT_RIGHT -> {
                         option.pitch -= 0.01F
-                        if (option.pitch < 0.5) option.pitch = 0F
+                        if (option.pitch < 0.5) option.pitch = 0.5F
                         displaying()
                     }
                     ClickType.LEFT -> {

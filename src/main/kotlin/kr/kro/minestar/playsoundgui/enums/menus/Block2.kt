@@ -37,7 +37,7 @@ enum class Block2(override var material: Material): SoundMaterial {
     NETHER_WART(Material.NETHER_WART),
     NOTE_BLOCK(Material.NOTE_BLOCK),
     NYLIUM(Material.CRIMSON_NYLIUM),
-    PISTON_EXTEND(Material.PISTON),
+    PISTON(Material.PISTON),
     ;
 
     override fun prefix(): String {

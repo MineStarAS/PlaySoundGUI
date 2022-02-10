@@ -9,6 +9,7 @@ import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.item.flagAll
 import kr.kro.minestar.utility.material.item
+import kr.kro.minestar.utility.number.round
 import kr.kro.minestar.utility.string.toPlayer
 import kr.kro.minestar.utility.string.toServer
 import kr.kro.minestar.utility.string.unColor
@@ -181,7 +182,7 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
 
         " ".toPlayer(player)
         "${Main.prefix} play §e$sound".toPlayer(player)
-        "§9[§fVOLUME§9] §f: §e$volume §f/ §9[§fPITCH§9] §f: §e$pitch".toPlayer(player)
+        "§9[§fVOLUME§9] §f: §e${volume.toDouble().round(2)} §f/ §9[§fPITCH§9] §f: §e${pitch.toDouble().round(2)}".toPlayer(player)
 
         val tcCMD = TextComponent("§6[Copy to command]")
         var soundCategoryText = soundCategory.name.lowercase()

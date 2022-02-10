@@ -12,7 +12,8 @@ object PlaySoundClass {
 
     fun searchSounds(string: String): List<Sound> {
         val list = mutableListOf<Sound>()
-        for (sound in Sound.values()) if (sound.name.contains(string.unColor().uppercase())) list.add(sound)
+        val text = string.unColor().uppercase()
+        for (sound in Sound.values()) if (sound.name.contains("${text}_")) list.add(sound)
         return list
     }
 }

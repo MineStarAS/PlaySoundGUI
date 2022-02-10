@@ -7,7 +7,9 @@ import kr.kro.minestar.playsoundgui.functions.ItemClass
 import kr.kro.minestar.utility.gui.GUI
 import kr.kro.minestar.utility.item.display
 import kr.kro.minestar.utility.item.display
+import kr.kro.minestar.utility.item.flagAll
 import kr.kro.minestar.utility.material.item
+import kr.kro.minestar.utility.string.toPlayer
 import kr.kro.minestar.utility.string.toServer
 import kr.kro.minestar.utility.string.unColor
 import net.kyori.adventure.sound.SoundStop
@@ -46,11 +48,10 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
     override fun displaying() {
         gui.clear()
         if (sound == "MUSIC") for ((slot, s) in Music.values().withIndex()) {
-            val item = s.material.item().display("${sound}_$s")
-            for (flag in ItemFlag.values()) item.addItemFlags(flag)
+            val item = s.material.item().display("${sound}_$s").flagAll()
             gui.setItem(slot, item)
         }
-        else for ((slot, s) in sounds.withIndex()) gui.setItem(slot, material.item().display(s.name))
+        else for ((slot, s) in sounds.withIndex()) gui.setItem(slot, material.item().display(s.name).flagAll())
         val option = Main.soundOptionMap[player]!!
         val slots = ItemClass.buttonSlots(gui.size, option.soundCategory, option.volume, option.pitch, option.scale)
         for (slot in slots) gui.setItem(slot.get, slot.item)
@@ -178,8 +179,9 @@ class PlaySound(override val player: Player, val sound: String, val material: Ma
         val sound = Sound.valueOf(display)
         player.playSound(player.location, sound, soundCategory, volume, pitch)
 
-        player.sendMessage(" ")
-        player.sendMessage("${Main.prefix} play §e$sound")
+        " ".toPlayer(player)
+        "${Main.prefix} play §e$sound".toPlayer(player)
+        "§9[§fVOLUME§9] §f: §e$volume §f/ §9[§fPITCH§9] §f: §e$pitch".toPlayer(player)
 
         val tcCMD = TextComponent("§6[Copy to command]")
         var soundCategoryText = soundCategory.name.lowercase()

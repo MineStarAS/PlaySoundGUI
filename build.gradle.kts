@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version "1.6.10"
     id("com.github.johnrengelman.shadow") version "7.1.0"
     id("org.jetbrains.dokka") version "1.5.0"
     `maven-publish`
@@ -26,7 +26,7 @@ dependencies {
     //project_TL
 
     //MineStar
-    implementation("kr.kro.minestar:Utility-API:1.5.17")
+    implementation("kr.kro.minestar:Utility-API:1.5.18")
 }
 
 tasks {
